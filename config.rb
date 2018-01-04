@@ -20,3 +20,14 @@ activate :deploy do |deploy|
   deploy.build_before = true
   deploy.deploy_method = :git
 end
+
+# Prismic configuration
+api = Prismic.api('https://sundarandco.prismic.io/api')
+response = api.query(Prismic::Predicates.at("document.type", "project"))
+projects = response.results
+
+# Routes
+page "/projects.html", locals: { projects: projects }
+# projects.each do |project|
+#   proxy "/projects/#{project.uid}.html", "/projects/show.html", locals: { project: project }, ignore: true
+# end

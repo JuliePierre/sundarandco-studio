@@ -1,0 +1,11 @@
+<h2>Youyou</h2>
+<%= projects.size %>
+<ul>
+<% projects.each do |project| %>
+  <li>
+    <%= project['project.nom_du_projet'].as_text() %>
+    <%= project['project.ville'].as_text() %>
+    <%= project['project.description'].as_text() %>
+  </li>
+<% end %>
+</ul>

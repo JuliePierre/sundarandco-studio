@@ -8,6 +8,8 @@ gem 'pry-byebug', require: true
 
 # Assets
 gem 'font-awesome-middleman'
-gem 'bootstrap-sass'
 gem 'jquery-middleman'
+gem 'prismic.io', require: 'prismic'
 
+# Temp
+gem 'pry-byebug', require: true
