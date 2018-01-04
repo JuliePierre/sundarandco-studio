@@ -1,6 +1,6 @@
 <div class="page-index" data-page="clients">
   <% clients.each do |client| %>
-    <div class="page" id="client-<%= client.uid %>">
+    <div class="page" id="<%= client.uid %>">
       <div class="client-title">
         <%= client['project.nom_du_projet'].as_html(nil).html_safe %>
         <%= client['project.ville'].as_html(nil).html_safe %>
@@ -11,3 +11,4 @@
     </div>
   <% end %>
 </div>
+<div class="hidden" id="clients-list" data-info=<%= get_clients_list %>></div>

@@ -35,3 +35,16 @@ page "/clients.html", locals: { clients: clients }
 #<%= project['project.nom_du_projet'].as_html(nil).html_safe %>
 #<%= project['project.ville'].as_html(nil).html_safe %>
 #<%= project['project.description'].as_html(nil).html_safe %>
+
+helpers do
+  def get_clients_list
+    api = Prismic.api('https://sundarandco.prismic.io/api')
+    response = api.query(Prismic::Predicates.at("document.type", "project"))
+    clients = response.results
+    clients_list = []
+    clients.each do |client|
+      clients_list << client.uid
+    end
+    return clients_list.to_json
+  end
+end
