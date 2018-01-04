@@ -24,10 +24,14 @@ end
 # Prismic configuration
 api = Prismic.api('https://sundarandco.prismic.io/api')
 response = api.query(Prismic::Predicates.at("document.type", "project"))
-projects = response.results
+clients = response.results
 
 # Routes
-page "/projects.html", locals: { projects: projects }
-# projects.each do |project|
-#   proxy "/projects/#{project.uid}.html", "/projects/show.html", locals: { project: project }, ignore: true
-# end
+page "/clients.html", locals: { clients: clients }
+
+# how to get prismic results
+# from projects
+#<%= project.uid %>
+#<%= project['project.nom_du_projet'].as_html(nil).html_safe %>
+#<%= project['project.ville'].as_html(nil).html_safe %>
+#<%= project['project.description'].as_html(nil).html_safe %>
