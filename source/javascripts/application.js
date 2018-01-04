@@ -1,12 +1,6 @@
-//= require jquery
-//= require_tree .
-
-// window.addEventListener('scroll', function(e) {
-//   let y = window.scrollY;
-//   const height = window.innerHeight;
-//   document.querySelectorAll(".page").forEach((page) => {
-//     if (page.getBoundingClientRect().top < (height - 100)) {
-//       page.scrollIntoView(true);
-//     }
-//   });
-// });
+document.addEventListener("DOMContentLoaded", () => {
+  // Add here your addEventListener code
+  let currentPage = document.querySelectorAll(".page-index");
+  let currentLink = currentPage[0].dataset.page;
+  document.getElementById(currentLink).classList.add("active");
+});

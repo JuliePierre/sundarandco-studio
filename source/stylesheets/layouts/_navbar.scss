@@ -15,12 +15,28 @@ nav {
     width: 80%;
   }
 }
-#navbar {
+#menu {
   position: absolute;
   left: 16%;
   top: 34%;
   a {
     display: block;
     text-decoration: none;
+    &.active {
+      font-style: italic;
+    }
+  }
+}
+#legal-link {
+  position: absolute;
+  left: 16%;
+  bottom: 6%;
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 22px;
+    &.active {
+      font-style: italic;
+    }
   }
 }

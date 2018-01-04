@@ -8,7 +8,6 @@ gem 'pry-byebug', require: true
 
 # Assets
 gem 'font-awesome-middleman'
-gem 'jquery-middleman'
 gem 'prismic.io', require: 'prismic'
 
 # Temp

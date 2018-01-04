@@ -1,11 +1,13 @@
-<% clients.each do |client| %>
-  <div class="page" id="client-<%= client.uid %>">
-    <div class="title">
-      <%= client['project.nom_du_projet'].as_html(nil).html_safe %>
-      <%= client['project.ville'].as_html(nil).html_safe %>
+<div class="page-index" data-page="clients">
+  <% clients.each do |client| %>
+    <div class="page" id="client-<%= client.uid %>">
+      <div class="client-title">
+        <%= client['project.nom_du_projet'].as_html(nil).html_safe %>
+        <%= client['project.ville'].as_html(nil).html_safe %>
+      </div>
+      <div class="content">
+        <%= client['project.description'].as_html(nil).html_safe %>
+      </div>
     </div>
-    <div class="description">
-      <%= client['project.description'].as_html(nil).html_safe %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

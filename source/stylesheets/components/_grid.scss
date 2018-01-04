@@ -1,0 +1,10 @@
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  &.space-between {
+    justify-content: space-between;
+  }
+}
+.half-element {
+  flex: 0 0 48%;
+}
