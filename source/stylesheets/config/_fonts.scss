@@ -1,16 +1,34 @@
-// Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+/*
+ * Emigre web font kit cXyvSsMX35Tlmod/AMAGtg==
+ *
+ * These fonts are not shareware.
+ * Use of these fonts requires the purchase
+ * of a license from Emigre, www.emigre.com
+ * Please contact sales@emigre.com
+ *
+ * To purchase a license to use this font go to:
+ * http://www.emigre.com/
+ *
+ * © 2018 Emigre, Inc
+ */
 
-// Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
-
-// To use a font file (.woff) uncomment following lines
+@font-face {
+    font-family: 'mreavesmodot-book';
+    src: font-url('mreavesmodot-book-webfont.eot');
+    src: font-url('mreavesmodot-book-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('mreavesmodot-book-webfont.woff2') format('woff2'),
+         font-url('mreavesmodot-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+$my-font: "mreavesmodot-book";
 // @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
+//     font-family: 'mreavesmodot-bookitalic';
+//     src: url('mreavesmodot-bookitalic-webfont.eot');
+//     src: url('mreavesmodot-bookitalic-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('mreavesmodot-bookitalic-webfont.woff2') format('woff2'),
+//          url('mreavesmodot-bookitalic-webfont.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+
 // }
-// $my-font: "Font Name";

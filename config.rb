@@ -10,12 +10,15 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+set :fonts_dir, 'fonts'
+
 configure :build do
   activate :minify_css
   activate :minify_javascript, compressor: -> { Uglifier.new(:harmony => true) }
   activate :asset_hash
   activate :relative_assets
   set :relative_links, true
+  # Set up fonts
 end
 
 activate :deploy do |deploy|
