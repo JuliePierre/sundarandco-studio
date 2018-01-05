@@ -1,3 +1,5 @@
+require "uglifier"
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
@@ -10,7 +12,7 @@ page '/*.txt', layout: false
 
 configure :build do
   activate :minify_css
-  activate :minify_javascript
+  activate :minify_javascript, compressor: -> { Uglifier.new(:harmony => true) }
   activate :asset_hash
   activate :relative_assets
   set :relative_links, true
