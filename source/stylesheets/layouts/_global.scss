@@ -12,6 +12,7 @@ p, h2 {
   line-height: 42px;
   margin: 0;
   font-weight: lighter;
+  letter-spacing: 0.035em;
 }
 p.small-text {
   font-size: 18px;
@@ -24,4 +25,5 @@ a {
   margin: 0;
   color: black;
   text-decoration: underline $b-blue;
+  letter-spacing: 0.035em;
 }
