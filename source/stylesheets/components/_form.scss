@@ -16,4 +16,7 @@ input {
   &:focus {
     outline: none;
   }
+  @media (max-width: $small-screen) {
+    width: 190px;
+  }
 }

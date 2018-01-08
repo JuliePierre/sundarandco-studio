@@ -13,11 +13,19 @@ p, h2 {
   margin: 0;
   font-weight: lighter;
   letter-spacing: 0.035em;
+  @media (max-width: $small-screen) {
+    font-size: 22px;
+    line-height: 26px;
+  }
 }
 p.small-text {
   font-size: 18px;
   line-height: 22px;
   text-align: justify;
+  @media (max-width: $small-screen) {
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
 a {
   font-size: 35px;
@@ -30,6 +38,11 @@ a {
   background-position: 0 37px;
   background-repeat: repeat-x;
   background-size: cover;
+  @media (max-width: $small-screen) {
+    font-size: 22px;
+    line-height: 26px;
+    background-position: 0 24px;
+  }
 }
 .small-text a {
   font-size: 18px;
@@ -39,4 +52,9 @@ a {
   background-position: 0 19px;
   background-repeat: repeat-x;
   background-size: cover;
+  @media (max-width: $small-screen) {
+    font-size: 14px;
+    line-height: 18px;
+    background-position: 0 15px;
+  }
 }

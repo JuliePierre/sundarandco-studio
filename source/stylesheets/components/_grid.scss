@@ -7,4 +7,8 @@
 }
 .half-element {
   flex: 0 0 48%;
+  @media (max-width: $small-screen) {
+    flex: 0 0 auto;
+    width: 48%;
+  }
 }

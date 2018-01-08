@@ -6,6 +6,9 @@
   position: relative;
   @media (max-width: $small-screen) {
     width: 100%;
+    float: initial;
+    height: calc(100vh - 6em);
+    top: 6em;
   }
 }
 .content {
@@ -13,4 +16,9 @@
   top: 38%;
   padding: 0 14%;
   width: 72%;
+}
+.legal-content {
+  position: initial;
+  width: calc(100% - 4em);
+  padding: 2em;
 }
