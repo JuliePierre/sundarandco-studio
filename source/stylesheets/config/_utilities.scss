@@ -5,8 +5,16 @@
   margin-top: 42px;
 }
 .underlined {
-  text-decoration: underline $b-blue;
+  background-image: linear-gradient(rgb(0,0,255), rgb(0,0,255));
+  background-repeat: repeat-x;
+  background-size: 100% 100%;
 }
 .hidden {
   display: none;
+}
+p.underlined {
+  background-position: 0 19px;
+}
+span.underlined {
+  background-position: 0 19px;
 }

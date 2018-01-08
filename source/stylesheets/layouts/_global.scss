@@ -24,6 +24,19 @@ a {
   line-height: 42px;
   margin: 0;
   color: black;
-  text-decoration: underline $b-blue;
+  text-decoration: none;
   letter-spacing: 0.035em;
+  background-image: linear-gradient(rgb(0,0,255), rgb(0,0,255));
+  background-position: 0 37px;
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+.small-text a {
+  font-size: 18px;
+  line-height: 22px;
+  text-align: justify;
+  background-image: linear-gradient(rgb(0,0,255), rgb(0,0,255));
+  background-position: 0 19px;
+  background-repeat: repeat-x;
+  background-size: cover;
 }
