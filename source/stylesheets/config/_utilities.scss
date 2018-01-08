@@ -17,4 +17,7 @@ p.underlined {
 }
 span.underlined {
   background-position: 0 19px;
+  @media (max-width: $small-screen) {
+    background-position: 0 15px;
+  }
 }
