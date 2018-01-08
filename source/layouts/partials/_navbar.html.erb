@@ -1,3 +1,4 @@
+<! Version desktop >
 <nav>
   <div id="brand">
     <%= image_tag "logo.png" %>
@@ -12,3 +13,27 @@
     <%= link_to "Legal Stuff", "legal.html", html_options = {class: "menu-link", "id": "legal"} %>
   </div>
 </nav>
+
+<! Version desktop >
+<div id="top-nav">
+  <%= image_tag "logo-mobile.png", id: "small-brand-logo" %>
+  <div id="hamburger-container">
+    <div id="nav-icon3">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+<div id="wrapper-mobile-nav">
+  <div id="menu">
+    <%= link_to "Home", "/index.html", html_options = {class: "menu-link", "id": "home"} %>
+    <%= link_to "Clients", "clients.html", html_options = {class: "menu-link", "id": "clients"} %>
+    <%= link_to "Contact", "contact.html", html_options = {class: "menu-link", "id": "contact"} %>
+    <%= link_to "More", "more.html", html_options = {class: "menu-link", "id": "more"} %>
+  </div>
+  <div id="legal-link">
+    <%= link_to "Legal Stuff", "legal.html", html_options = {class: "menu-link", "id": "legal"} %>
+  </div>
+</div>

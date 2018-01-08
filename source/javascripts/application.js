@@ -21,5 +21,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  // Définition des fonctions
+  function showNavbar() {
+    const navbar = document.getElementById("wrapper-mobile-nav");
+    navbar.classList.toggle("visible");
+    const hamburgerIcon = document.getElementById('nav-icon3')
+    hamburgerIcon.classList.toggle('open');
+  }
+  function initElement() {
+    // NOTE: showAlert(); ou showAlert(param); NE fonctionne PAS ici.
+    // Il faut fournir une valeur de type function (nom de fonction déclaré ailleurs ou declaration en ligne de fonction).
+    // OPEN
+    const hamburger = document.getElementById("nav-icon3");
+    hamburger.addEventListener("click", showNavbar, false);
+  };
 
+  // Appel des fonctions
+  initElement();
 });

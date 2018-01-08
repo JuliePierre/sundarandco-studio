@@ -5,6 +5,9 @@ nav {
   left: 0;
   width: 27%;
   background-color: $b-red;
+  @media (max-width: $small-screen) {
+    display: none;
+  }
 }
 #brand {
   position: absolute;
@@ -28,6 +31,9 @@ nav {
       font-style: italic;
     }
   }
+  @media (max-width: $small-screen) {
+    position: initial;
+  }
 }
 #legal-link {
   position: absolute;
@@ -42,5 +48,57 @@ nav {
     &.active {
       font-style: italic;
     }
+  }
+  @media (max-width: $small-screen) {
+    left: initial;
+  }
+}
+
+// Mobile version
+// Navbar
+#top-nav {
+  padding: 0 2em;
+  position: fixed;
+  top: 0;
+  height: 6em;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100%-4em);
+  background-color: $b-red;
+  opacity: 1;
+  z-index: 10;
+  display: none;
+  z-index: 20;
+  @media (max-width: $small-screen) {
+    display: flex;
+  }
+  img {
+    width: 30%;
+  }
+}
+#small-brand-logo {
+  width: 30%;
+}
+#hamburger-container {
+  flex: 0 0 50px;
+}
+// Wrapper
+#wrapper-mobile-nav {
+  background-color: $b-red;
+  position: fixed;
+  width: 100%;
+  right: 0;
+  left: 0;
+  top: -100vh;
+  height: 100vh;
+  z-index: 10;
+  transition: top ease 0.5s;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  &.visible {
+    top: 0;
   }
 }

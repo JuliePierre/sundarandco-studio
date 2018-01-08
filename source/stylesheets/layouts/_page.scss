@@ -4,6 +4,9 @@
   height: 100vh;
   background-color: $b-brown;
   position: relative;
+  @media (max-width: $small-screen) {
+    width: 100%;
+  }
 }
 .content {
   position: absolute;
