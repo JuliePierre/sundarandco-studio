@@ -8,7 +8,7 @@
     width: 100%;
     float: initial;
     height: calc(100vh - 6em);
-    top: 6em;
+    padding-top: 6em;
   }
 }
 .content {
@@ -18,7 +18,13 @@
   width: 72%;
 }
 .legal-content {
-  position: initial;
-  width: calc(100% - 4em);
-  padding: 2em;
+  position: absolute;
+  top: 38%;
+  padding: 0 14%;
+  width: 72%;
+  @media (max-width: $small-screen) {
+    position: initial;
+    width: calc(100% - 4em);
+    padding: 2em;
+  }
 }

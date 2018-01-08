@@ -5,6 +5,7 @@ nav {
   left: 0;
   width: 27%;
   background-color: $b-red;
+  z-index: 1000;
   @media (max-width: $small-screen) {
     display: none;
   }

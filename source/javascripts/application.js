@@ -1,5 +1,5 @@
 //= require jquery
-//= require_tree.
+//= require_tree .
 
 document.addEventListener("DOMContentLoaded", () => {
   // Add here your addEventListener code
@@ -8,13 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let mobileCurrentLink = "mobile-" + currentPage[0].dataset.page;
   document.getElementById(currentLink).classList.add("active");
   document.getElementById(mobileCurrentLink).classList.add("active");
-
-  // Smooth scroll
-  const clientsList = document.getElementById('clients-list').dataset.info;
-  const info = JSON.parse(clientsList);
-  let i = 0
-  window.addEventListener('scroll', function(e) {
-  });
 
   // Définition des fonctions
   function showNavbar() {
@@ -33,8 +26,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Appel des fonctions
   initElement();
-});
-
-$(document).ready(function() {
-  $('#fullpage').fullpage();
 });

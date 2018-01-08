@@ -2856,3 +2856,8 @@
 
     }; //end of $.fn.fullpage
 });
+
+
+$(document).ready(function() {
+  $('#fullpage').fullpage();
+});

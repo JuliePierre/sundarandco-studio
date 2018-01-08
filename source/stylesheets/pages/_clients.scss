@@ -2,4 +2,7 @@
   position: absolute;
   top: 12%;
   padding: 0 14%;
+  @media (max-width: $small-screen) {
+    top: 18%;
+  }
 }

@@ -1,6 +1,6 @@
-<div class="page-index" data-page="clients">
+<div class="page-index" data-page="clients" id="fullpage">
   <% clients[0..-2].each_with_index do |client, index| %>
-    <div class="page" id="<%= client.uid %>" data-next="<%= clients[index + 1].uid %>">
+    <div class="page section" id="<%= client.uid %>" data-next="<%= clients[index + 1].uid %>">
       <div class="client-title">
         <%= client['project.nom_du_projet'].as_html(nil).html_safe %>
         <%= client['project.ville'].as_html(nil).html_safe %>
@@ -11,7 +11,7 @@
     </div>
   <% end %>
   <% last_client = clients[-1] %>
-  <div class="page" id="<%= last_client.uid %>" data-next="<%= clients.first.uid %>">
+  <div class="page section" id="<%= last_client.uid %>" data-next="<%= clients.first.uid %>">
     <div class="client-title">
       <%= last_client['project.nom_du_projet'].as_html(nil).html_safe %>
       <%= last_client['project.ville'].as_html(nil).html_safe %>
