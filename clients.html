@@ -7,12 +7,13 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
     <title></title>
-    <link href="stylesheets/application-28f3fad7.css" rel="stylesheet" />
-    <script src="javascripts/application-c93ecab7.js"></script>
-    <link href="images/favicon-f15af148.png" rel="icon" type="image/png" />
+    <link href="stylesheets/application-422bc5f7.css" rel="stylesheet" />
+    <script src="javascripts/application-f386baf3.js"></script>
+    <link href="images/favicon-89a5744b.png" rel="icon" type="image/png" />
   </head>
   <body>
-    <nav>
+    <! Version desktop >
+<nav>
   <div id="brand">
     <img src="images/logo-9f9530c4.png" alt="Logo" />
   </div>
@@ -27,8 +28,32 @@
   </div>
 </nav>
 
-    <div class="page-index" data-page="clients">
-    <div class="page" id="otium-capital">
+<! Version desktop >
+<div id="top-nav">
+  <img src="images/logo-mobile-12422fcc.png" id="small-brand-logo" alt="Logo mobile" />
+  <div id="hamburger-container">
+    <div id="nav-icon3">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+<div id="wrapper-mobile-nav">
+  <div id="mobile-menu">
+    <a href="./" class="mobile-menu-link" id="mobile-home">Home</a>
+    <a href="clients.html" class="mobile-menu-link" id="mobile-clients">Clients</a>
+    <a href="contact.html" class="mobile-menu-link" id="mobile-contact">Contact</a>
+    <a href="more.html" class="mobile-menu-link" id="mobile-more">More</a>
+  </div>
+  <div id="legal-link">
+    <a href="legal.html" class="mobile-menu-link" id="mobile-legal">Legal Stuff</a>
+  </div>
+</div>
+
+    <div class="page-index" data-page="clients" id="fullpage">
+    <div class="page section" id="otium-capital" data-next="chiarastella-cattana">
       <div class="client-title">
         <p><a href="https://otium.fr/" target="_blank" rel="noopener">Otium Capital</a></p>
         <h2>Paris</h2>
@@ -37,7 +62,7 @@
         <p>Otium is an early-stage venture capital fund investing in tech and consumer startups. We help some of the companies in their <a href="https://otium.fr/o-portfolio/" target="_blank" rel="noopener">portfolio</a> with branding.</p>
       </div>
     </div>
-    <div class="page" id="chiarastella-cattana">
+    <div class="page section" id="chiarastella-cattana" data-next="yali">
       <div class="client-title">
         <p><a href="https://www.chiarastellacattana.com/" target="_blank" rel="noopener">Chiarastella Cattana</a> </p>
         <h2>Venice</h2>
@@ -46,7 +71,7 @@
         <p>Chiarastella Cattana is an Italian textile designer whose fabrics are handmade in the Dolomites. We helped her optimize her e-shop prior to launch. </p>
       </div>
     </div>
-    <div class="page" id="yali">
+    <div class="page section" id="yali" data-next="stouls">
       <div class="client-title">
         <p><a href="https://www.yali.it" target="_blank" rel="noopener">Yali</a></p>
         <h2>Venice</h2>
@@ -55,18 +80,19 @@
         <p>Yali is a glassware studio based in Venice, Italy. We are working with them on e-commerce, distribution, and a bit of branding. </p>
       </div>
     </div>
-    <div class="page" id="stouls">
-      <div class="client-title">
-        <p><a href="https://www.stouls.paris/" target="_blank" rel="noopener">Stouls</a></p>
-        <h2>Paris</h2>
-      </div>
-      <div class="content">
-        <p>Stouls is a French leather brand making ultra-light washable leather in a wild variety of colours. We are building an e-shop for them with Parisian agency <a href="https://www.cleoburo.com" target="_blank" rel="noopener">Cleoburo</a>. </p>
-      </div>
+  <div class="page section" id="stouls" data-next="otium-capital">
+    <div class="client-title">
+      <p><a href="https://www.stouls.paris/" target="_blank" rel="noopener">Stouls</a></p>
+      <h2>Paris</h2>
     </div>
+    <div class="content">
+      <p>Stouls is a French leather brand making ultra-light washable leather in a wild variety of colours. We are building an e-shop for them with Parisian agency <a href="https://www.cleoburo.com" target="_blank" rel="noopener">Cleoburo</a>. </p>
+    </div>
+  </div>
 </div>
 <div class="hidden" id="clients-list" data-info=["otium-capital","chiarastella-cattana","yali","stouls"]></div>
 
+    <script src="https://use.fontawesome.com/cc104eedfa.js"></script>
   </body>
   <!--
     /*
