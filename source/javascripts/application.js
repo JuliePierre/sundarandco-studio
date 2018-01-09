@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let move = ""
   let isMoving = false;
 
+  // lien vers l'inscription à la newsletter
+  const links = document.querySelectorAll('.linkToNL')
+  const moreSection = document.getElementById('more-page')
+  const newsLetter = document.getElementById('newsletter')
+
   window.addEventListener('wheel', function(event) {
     // Page clients
     if (document.getElementById('clients-list')) {
@@ -59,10 +64,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // lien vers l'inscription à la newsletter
-  const links = document.querySelectorAll('.linkToNL')
-  const moreSection = document.getElementById('more-page')
-  const newsLetter = document.getElementById('newsletter')
+  // Logique de slider sur la page Clients pour le mobile
+  // Register touchstart and touchend listeners for element 'source'
+  let clientY;
+
+  window.addEventListener('touchstart', function(e) {
+    // Cache the client X/Y coordinates
+    clientY = e.touches[0].clientY;
+  }, false);
+
+  window.addEventListener('touchend', function(e) {
+    let deltaY;
+    // Compute the change in X and Y coordinates.
+    // The first touch point in the changedTouches
+    // list is the touch point that was just removed from the surface.
+    deltaY = e.changedTouches[0].clientY - clientY;
+
+    currentSection = document.querySelectorAll(".fullpage.on-screen")[document.querySelectorAll(".fullpage.on-screen").length - 1]
+    // Check si touchmove vers le haut ou vers le bas
+    if (document.getElementById('clients-list')) {
+      if (deltaY < 0) {
+        targetId = currentSection.dataset.next;
+        target = document.getElementById(targetId);
+        target.classList.add('on-screen');
+
+        let timeoutID;
+        timeoutID = window.setTimeout(function() { up(currentSection); }, 1000) //wait one second before continuing
+      }
+      else if (deltaY > 0) {
+        targetId = currentSection.dataset.prev;
+        target = document.getElementById(targetId);
+        target.classList.add('front-page');
+        target.classList.remove('up');
+        window.setTimeout(function() { down(currentSection); }, 500)
+        window.setTimeout(function() { stepBack(target); }, 1000)
+      }
+    }
+    if (moreSection) {
+      if (deltaY > 0) {
+        moreSection.classList.add('front-page');
+        moreSection.classList.remove('up');
+        window.setTimeout(function() { down(newsLetter); }, 500)
+        window.setTimeout(function() { stepBack(moreSection); }, 1000)
+      }
+    }
+  }, false);
+
   links.forEach((link) => {
     link.addEventListener("click", (event) => {
       newsletter.classList.add('on-screen')
