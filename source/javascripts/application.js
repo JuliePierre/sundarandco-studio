@@ -18,15 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
   let isMoving = false;
 
   window.addEventListener('wheel', function(event) {
-    // firing event only once
-    event.preventDefault();
-    if (isMoving) return;
-    navigateTo();
-    // getting info from actual section
-    currentSection = document.querySelectorAll(".fullpage.on-screen")[document.querySelectorAll(".fullpage.on-screen").length - 1]
-    // if scrolling is to the bottom
-    if (event.deltaY > 0) {
-      if (document.getElementById('clients-list')) {
+    // Page clients
+    if (document.getElementById('clients-list')) {
+      // firing event only once
+      event.preventDefault();
+      if (isMoving) return;
+      navigateTo();
+      // getting info from actual section
+      currentSection = document.querySelectorAll(".fullpage.on-screen")[document.querySelectorAll(".fullpage.on-screen").length - 1]
+      // if scrolling is to the bottom
+      if (event.deltaY > 0) {
         targetId = currentSection.dataset.next;
         target = document.getElementById(targetId);
         target.classList.add('on-screen');
@@ -34,27 +35,26 @@ document.addEventListener("DOMContentLoaded", () => {
         let timeoutID;
         timeoutID = window.setTimeout(function() { up(currentSection); }, 1000) //wait one second before continuing
       }
-      // définition des fonctions
-      function up(element) {
-        //finish doing things after the pause
-        element.classList.add('up');
-      }
-    }
-    // if scrolling is to the top
-    else if (event.deltaY < 0) {
-      if (moreSection) {
-        moreSection.classList.add('front-page');
-        moreSection.classList.remove('up');
-        window.setTimeout(function() { down(newsLetter); }, 500)
-        window.setTimeout(function() { stepBack(moreSection); }, 1000)
-      }
-      if (document.getElementById('clients-list')) {
+      // if scrolling is to the top
+      else if (event.deltaY < 0) {
         targetId = currentSection.dataset.prev;
         target = document.getElementById(targetId);
         target.classList.add('front-page');
         target.classList.remove('up');
         window.setTimeout(function() { down(currentSection); }, 500)
         window.setTimeout(function() { stepBack(target); }, 1000)
+      }
+    }
+    if (moreSection) {
+      // firing event only once
+      event.preventDefault();
+      if (isMoving) return;
+      navigateTo();
+      if (event.deltaY < 0) {
+        moreSection.classList.add('front-page');
+        moreSection.classList.remove('up');
+        window.setTimeout(function() { down(newsLetter); }, 500)
+        window.setTimeout(function() { stepBack(moreSection); }, 1000)
       }
     }
   });

@@ -1,4 +1,5 @@
 .b-btn {
+  font-family: $my-font;
   background-color: transparent;
   cursor: text;
   padding: 1px;
@@ -14,6 +15,7 @@
   font-weight: lighter;
   width: auto;
   cursor: pointer;
+  letter-spacing: 0.035em;
   &:hover {
     color: rgba(255, 255, 255, 0.5)
   }
