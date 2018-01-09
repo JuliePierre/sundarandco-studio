@@ -60,10 +60,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  window.addEventListener('scroll', function(e) {
-    console.log('test');
+  // lien vers l'inscription à la newsletter
+  const links = document.querySelectorAll('.linkToNL')
+  const moreSection = document.getElementById('more-page')
+  const newsLetter = document.getElementById('newsletter')
+  links.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    newsletter.classList.add('on-screen')
+    let timeoutID;
+      timeoutID = window.setTimeout(function() { up(moreSection); }, 1000) //wait one second before continuing
+
+      function up(element) {
+        //finish doing things after the pause
+        element.classList.add('up');
+      }
   });
 
+  // scrolling logic
   let currentSection = null
   let targetId = null
   let target = null
@@ -81,13 +94,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // if scrolling is to the bottom
     if (event.deltaY > 0) {
-      targetId = currentSection.dataset.next;
-      target = document.getElementById(targetId);
-      target.classList.add('on-screen');
+      if (document.getElementById('clients-list')) {
+        targetId = currentSection.dataset.next;
+        target = document.getElementById(targetId);
+        target.classList.add('on-screen');
 
-      let timeoutID;
-      timeoutID = window.setTimeout(function() { up(currentSection); }, 1000) //wait one second before continuing
-
+        let timeoutID;
+        timeoutID = window.setTimeout(function() { up(currentSection); }, 1000) //wait one second before continuing
+      }
+      // définition des fonctions
       function up(element) {
         //finish doing things after the pause
         element.classList.add('up');
@@ -95,26 +110,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // if scrolling is to the top
     else if (event.deltaY < 0) {
-      targetId = currentSection.dataset.prev;
-      target = document.getElementById(targetId);
-      target.classList.add('front-page');
-      target.classList.remove('up');
+      if (moreSection) {
+        moreSection.classList.add('front-page');
+        moreSection.classList.remove('up');
 
-      window.setTimeout(function() { down(currentSection); }, 500)
+        window.setTimeout(function() { down(newsLetter); }, 500)
 
+        window.setTimeout(function() { stepBack(moreSection); }, 1000)
+      }
+      if (document.getElementById('clients-list')) {
+        targetId = currentSection.dataset.prev;
+        target = document.getElementById(targetId);
+        target.classList.add('front-page');
+        target.classList.remove('up');
+
+        window.setTimeout(function() { down(currentSection); }, 500)
+        window.setTimeout(function() { stepBack(target); }, 1000)
+      }
+
+      // définitions des fonctions
       function down(element) {
         //finish doing things after the pause
         element.classList.remove('on-screen');
       }
-
-      window.setTimeout(function() { stepBack(target); }, 1000)
-
       function stepBack(target) {
         //finish doing things after the pause
         target.classList.remove('front-page');
       }
     }
   });
+});
 
   // check if mouth is moving
   function navigateTo(){

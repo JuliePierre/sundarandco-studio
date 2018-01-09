@@ -16,6 +16,13 @@ p.underlined {
   background-position: 0 19px;
 }
 span.underlined {
+  background-position: 0 37px;
+  @media (max-width: $small-screen) {
+    background-position: 0 24px;
+  }
+  cursor: pointer;
+}
+p.small-text span.underlined {
   background-position: 0 19px;
   @media (max-width: $small-screen) {
     background-position: 0 15px;
