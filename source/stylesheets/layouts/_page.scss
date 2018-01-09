@@ -1,16 +1,51 @@
-.page {
-  width: 73%;
-  float: right;
-  height: 100vh;
+// .page {
+//   width: 73%;
+//   float: right;
+//   height: 100vh;
+//   background-color: $b-brown;
+//   position: relative;
+//   @media (max-width: $small-screen) {
+//     width: 100%;
+//     float: initial;
+//     height: calc(100vh - 6em);
+//     padding-top: 6em;
+//   }
+// }
+.page-wrapper {
   background-color: $b-brown;
+  height: 100vh;
+  width: 73%;
+  left: 27%;
   position: relative;
+  overflow: hidden;
+}
+.page {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  top: 100vh;
+  background-color: $b-brown;
+  transition: transform 0.5s ease;
+  z-index: 10;
   @media (max-width: $small-screen) {
     width: 100%;
     float: initial;
     height: calc(100vh - 6em);
     padding-top: 6em;
   }
+  &.front-page {
+    z-index: 100;
+  }
 }
+.page.on-screen {
+  transform: translate3d(0px, -776px, 0px)
+}
+.page.up {
+  transform: translate3d(0px, -1552px, 0px)
+}
+
+
 .content {
   position: absolute;
   top: 38%;

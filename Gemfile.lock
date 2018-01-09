@@ -53,6 +53,8 @@ GEM
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    materialize-sass (0.98.2)
+      sass (~> 3.3)
     memoist (0.16.0)
     method_source (0.9.0)
     middleman (4.2.1)
@@ -140,6 +142,7 @@ DEPENDENCIES
   font-awesome-middleman
   hamburgers
   jquery-middleman
+  materialize-sass
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
   middleman-deploy!
