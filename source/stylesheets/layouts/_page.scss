@@ -49,7 +49,6 @@
 .client-page.up {
   transform: translate3d(0px, -200vh, 0px)
 }
-
 .content {
   position: absolute;
   top: 38%;
@@ -59,11 +58,20 @@
     top: 30%;
   }
 }
+// spécificités de la page legal
+.legal-page {
+  background-color: $b-brown;
+  height: auto;
+  padding-left: 27%;
+  width: calc(100vw - 27%);
+  @media (max-width: $small-screen) {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 6em;
+  }
+}
 .legal-content {
-  position: absolute;
-  top: 38%;
-  padding: 0 14%;
-  width: 72%;
+  padding: 14% 14%;
   @media (max-width: $small-screen) {
     position: initial;
     width: calc(100% - 4em);

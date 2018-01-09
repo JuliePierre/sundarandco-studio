@@ -26,6 +26,10 @@ p.small-text {
     font-size: 14px;
     line-height: 18px;
   }
+  @media (max-width: $very-small-screen) {
+    font-size: 11px;
+    line-height: 14px;
+  }
 }
 a {
   font-size: 35px;
@@ -56,5 +60,10 @@ a {
     font-size: 14px;
     line-height: 18px;
     background-position: 0 15px;
+  }
+  @media (max-width: $very-small-screen) {
+    font-size: 11px;
+    line-height: 14px;
+    background-position: 0 11px;
   }
 }
