@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Changement de pages : previoux
+  // Changement de pages : previous
   let prevButtons = document.querySelectorAll(".button.prev")
   prevButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
@@ -60,16 +60,67 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // let prevButtons = document.querySelectorAll(".button.prev")
-  // prevButtons.forEach((button) => {
-  //   button.addEventListener("click", (event) => {
-  //     let targetSection = document.getElementById(event.currentTarget.dataset.target);
-  //     pages.forEach((page) => {
-  //       page.classList.remove('active');
-  //     });
-  //     targetSection.classList.add('active');
-  //   });
-  // });
+  window.addEventListener('scroll', function(e) {
+    console.log('test');
+  });
+
+  let currentSection = null
+  let targetId = null
+  let target = null
+  let move = ""
+  let isMoving = false;
+
+  window.addEventListener('wheel', function(event) {
+    // firing event only once
+    event.preventDefault();
+    if (isMoving) return;
+    navigateTo();
+
+    // getting info from actual section
+    currentSection = document.querySelectorAll(".fullpage.on-screen")[document.querySelectorAll(".fullpage.on-screen").length - 1]
+
+    // if scrolling is to the bottom
+    if (event.deltaY > 0) {
+      targetId = currentSection.dataset.next;
+      target = document.getElementById(targetId);
+      target.classList.add('on-screen');
+
+      let timeoutID;
+      timeoutID = window.setTimeout(function() { up(currentSection); }, 1000) //wait one second before continuing
+
+      function up(element) {
+        //finish doing things after the pause
+        element.classList.add('up');
+      }
+    }
+    // if scrolling is to the top
+    else if (event.deltaY < 0) {
+      targetId = currentSection.dataset.prev;
+      target = document.getElementById(targetId);
+      target.classList.add('front-page');
+      target.classList.remove('up');
+
+      window.setTimeout(function() { down(currentSection); }, 500)
+
+      function down(element) {
+        //finish doing things after the pause
+        element.classList.remove('on-screen');
+      }
+
+      window.setTimeout(function() { stepBack(target); }, 1000)
+
+      function stepBack(target) {
+        //finish doing things after the pause
+        target.classList.remove('front-page');
+      }
+    }
+  });
+
+  // check if mouth is moving
+  function navigateTo(){
+     isMoving = true;
+     window.setTimeout(function() { isMoving = false; },2000);
+  }
 
   // Définition des fonctions
   function showNavbar() {

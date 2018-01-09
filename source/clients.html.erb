@@ -9,10 +9,9 @@
     <div class="content">
       <%= first_client['project.description'].as_html(nil).html_safe %>
     </div>
-    <div class="button next" data-page="<%= first_client.uid %>" data-target="<%= clients[1].uid %>">Next</div>
   </div>
   <% clients[1..-2].each_with_index do |client, index| %>
-    <div class="page fullpage" id="<%= client.uid %>">
+    <div class="page fullpage" id="<%= client.uid %>" data-next="<%= clients[index + 2].uid %>" data-prev="<%= clients[index].uid %>">
       <div class="client-title">
         <%= client['project.nom_du_projet'].as_html(nil).html_safe %>
         <%= client['project.ville'].as_html(nil).html_safe %>
@@ -20,12 +19,10 @@
       <div class="content">
         <%= client['project.description'].as_html(nil).html_safe %>
       </div>
-      <div class="button next" data-page="<%= client.uid %>" data-target="<%= clients[index + 2].uid %>">Next</div>
-      <div class="button prev" data-page="<%= client.uid %>" data-target="<%= clients[index].uid %>">Prev</div>
     </div>
   <% end %>
   <% last_client = clients[-1] %>
-  <div class="page fullpage" id="<%= last_client.uid %>">
+  <div class="page fullpage" id="<%= last_client.uid %>" data-prev="<%= clients[-2].uid %>">
     <div class="client-title">
       <%= last_client['project.nom_du_projet'].as_html(nil).html_safe %>
       <%= last_client['project.ville'].as_html(nil).html_safe %>
@@ -33,8 +30,6 @@
     <div class="content">
       <%= last_client['project.description'].as_html(nil).html_safe %>
     </div>
-    <div class="button prev" data-page="<%= last_client.uid %>" data-target="<%= clients[-2].uid %>">Prev</div>
-  </div>
 </div>
 <div class="hidden" id="clients-list" data-info=<%= get_clients_list %>></div>
 </div>
