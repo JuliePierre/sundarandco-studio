@@ -1,16 +1,3 @@
-// .page {
-//   width: 73%;
-//   float: right;
-//   height: 100vh;
-//   background-color: $b-brown;
-//   position: relative;
-//   @media (max-width: $small-screen) {
-//     width: 100%;
-//     float: initial;
-//     height: calc(100vh - 6em);
-//     padding-top: 6em;
-//   }
-// }
 .page-wrapper {
   background-color: $b-brown;
   height: 100vh;
@@ -18,8 +5,26 @@
   left: 27%;
   position: relative;
   overflow: hidden;
+  @media (max-width: $small-screen) {
+    top: 6em;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 6em);
+    padding-top: 0;
+  }
 }
 .page {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  top: 0;
+  z-index: 10;
+  &.front-page {
+    z-index: 100;
+  }
+}
+.client-page {
   position: absolute;
   right: 0;
   left: 0;
@@ -38,19 +43,21 @@
     z-index: 100;
   }
 }
-.page.on-screen {
-  transform: translate3d(0px, -776px, 0px)
+.client-page.on-screen {
+  transform: translate3d(0px, -100vh, 0px)
 }
-.page.up {
-  transform: translate3d(0px, -1552px, 0px)
+.client-page.up {
+  transform: translate3d(0px, -200vh, 0px)
 }
-
 
 .content {
   position: absolute;
   top: 38%;
   padding: 0 14%;
   width: 72%;
+  @media (max-width: $small-screen) {
+    top: 30%;
+  }
 }
 .legal-content {
   position: absolute;
