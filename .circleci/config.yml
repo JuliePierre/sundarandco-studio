@@ -6,7 +6,6 @@ jobs:
     steps:
       - checkout
       - run: gem install bundler
-      - run: gem install middleman
       - run: bundle install
       - run: gem install execjs
       - deploy:
