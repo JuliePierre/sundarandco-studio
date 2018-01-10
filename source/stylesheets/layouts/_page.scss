@@ -72,6 +72,8 @@
 }
 .legal-content {
   padding: 14% 14%;
+  column-count: 2;
+  text-align: justify;
   @media (max-width: $small-screen) {
     position: initial;
     width: calc(100% - 4em);
