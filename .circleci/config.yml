@@ -1,8 +1,11 @@
-version: 2
-jobs:
+compile:
+  override:
+    - bundle exec middleman build
+
+deployment:
   build:
-    docker:
-      - image: circleci/ruby:2.4.1
-    steps:
-      - checkout
-      - run: echo "A first hello"
+    branch: master
+    commands:
+      - git config user.email $GIT_USER_EMAIL
+      - git config user.name $GIT_USER_NAME
+      - bundle exec middleman deploy
