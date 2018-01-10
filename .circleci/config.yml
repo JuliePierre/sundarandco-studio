@@ -6,3 +6,8 @@ jobs:
     steps:
       - checkout
       - run: pip install -r requirements/dev.txt
+      - deploy:
+        commands:
+          - git config user.email $GIT_USER_EMAIL
+          - git config user.name $GIT_USER_NAME
+          - bundle exec middleman deploy
