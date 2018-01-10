@@ -7,6 +7,5 @@ jobs:
       - checkout
       - run: gem install bundler
       - run: bundle install
-      - run: gem install execjs
       - deploy:
           command: bundle exec middleman deploy
