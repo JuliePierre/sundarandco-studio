@@ -8,8 +8,8 @@ jobs:
       - run: gem install bundler
       - run: bundle install
       - run: 
-        - command: |
-            git config user.email $GIT_USER_EMAIL
-            git config user.name $GIT_USER_NAME
+          command: git config user.email $GIT_USER_EMAIL
+      - run:
+          command: git config user.name $GIT_USER_NAME
       - deploy:
           command: bundle exec middleman deploy
