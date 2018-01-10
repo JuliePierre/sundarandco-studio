@@ -1,5 +1,6 @@
 <div class="page-wrapper">
 <div class="page-index" data-page="clients">
+  <% clients = clients.reverse %>
   <% first_client = clients[0] %>
   <div class="client-page fullpage on-screen" id="<%= first_client.uid %>" data-next="<%= clients[1].uid %>">
     <div class="client-title">
