@@ -5,6 +5,5 @@ jobs:
       - image: circleci/python:3.6.2-stretch-browsers
     steps:
       - checkout
-      - run: pip install -r requirements/dev.txt
       - deploy:
           command: bundle exec middleman deploy
