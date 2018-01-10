@@ -10,5 +10,5 @@ jobs:
       - run: git config user.email $GIT_USER_EMAIL
       - run: git config user.name $GIT_USER_NAME
       - deploy:
-          commands:
+          command:
             - bundle exec middleman deploy
