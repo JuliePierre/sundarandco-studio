@@ -8,4 +8,7 @@ jobs:
       - run: gem install bundler
       - run: bundle install
       - deploy:
-          command: bundle exec middleman deploy
+          commands:
+            - git config user.email $GIT_USER_EMAIL
+            - git config user.name $GIT_USER_NAME
+            - bundle exec middleman deploy
