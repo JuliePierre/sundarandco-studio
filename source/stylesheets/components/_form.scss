@@ -11,7 +11,7 @@ input {
   display: inline-block;
   text-align: start;
   margin: 0em;
-  font-size: 22px;
+  font-size: 35px;
   line-height: 42px;
   font-weight: lighter;
   letter-spacing: 0.035em;
@@ -20,5 +20,7 @@ input {
   }
   @media (max-width: $small-screen) {
     width: 190px;
+    font-size: 22px;
+    line-height: 26px;
   }
 }

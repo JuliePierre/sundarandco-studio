@@ -4,6 +4,9 @@
   &.space-between {
     justify-content: space-between;
   }
+  &.flex-end {
+    text-align: flex-end;
+  }
 }
 .half-element {
   flex: 0 0 48%;

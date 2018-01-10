@@ -12,6 +12,9 @@
     height: calc(100vh - 6em);
     padding-top: 0;
   }
+  &.yellow-wrapper {
+    background-color: $b-yellow;
+  }
 }
 .page {
   position: absolute;
