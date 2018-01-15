@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.3-node
+    steps:
+      - checkout
+      - run: gem install bundler
+      - run: bundle install
+      - run: 
+          command: git config user.email "julie.pierre3@gmail.com"
+      - run:
+          command: git config user.name "JuliePierre"
+      - deploy:
+          command: bundle exec middleman deploy
