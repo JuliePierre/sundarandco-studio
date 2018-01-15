@@ -90,13 +90,16 @@ nav {
   height: 100vh;
   z-index: 100;
   transition: top ease 0.5s;
-  display: flex;
   text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  display: none;
   &.visible {
     top: 0;
+  }
+  @media (max-width: $small-screen) {
+    display: flex;
   }
 }
 // Menu
