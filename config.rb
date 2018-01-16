@@ -27,8 +27,8 @@ activate :deploy do |deploy|
 end
 
 # Prismic configuration
-api = Prismic.api('https://sundarandco.prismic.io/api')
-response = api.query(Prismic::Predicates.at("document.type", "project"))
+api = Prismic.api('https://sundarandco-studio.prismic.io/api')
+response = api.query(Prismic::Predicates.at("document.type", "client"))
 clients = response.results
 
 # Routes
@@ -43,8 +43,8 @@ page "/clients.html", locals: { clients: clients }
 
 helpers do
   def get_clients_list
-    api = Prismic.api('https://sundarandco.prismic.io/api')
-    response = api.query(Prismic::Predicates.at("document.type", "project"))
+    api = Prismic.api('https://sundarandco-studio.prismic.io/api')
+    response = api.query(Prismic::Predicates.at("document.type", "client"))
     clients = response.results
     clients_list = []
     clients.each do |client|

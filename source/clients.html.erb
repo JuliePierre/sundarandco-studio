@@ -1,35 +1,35 @@
 <div class="page-wrapper">
 <div class="page-index" data-page="clients">
-  <% clients = clients.reverse %>
+  <%# clients = clients.reverse %>
   <% first_client = clients[0] %>
   <div class="client-page fullpage on-screen" id="<%= first_client.uid %>" data-next="<%= clients[1].uid %>">
     <div class="client-title">
-      <%= first_client['project.nom_du_projet'].as_html(nil).html_safe %>
-      <%= first_client['project.ville'].as_html(nil).html_safe %>
+      <%= first_client['client.client_link'].as_html(nil).html_safe %>
+      <%= first_client['client.client_city'].as_html(nil).html_safe %>
     </div>
     <div class="content">
-      <%= first_client['project.description'].as_html(nil).html_safe %>
+      <%= first_client['client.client_description'].as_html(nil).html_safe %>
     </div>
   </div>
   <% clients[1..-2].each_with_index do |client, index| %>
     <div class="client-page fullpage" id="<%= client.uid %>" data-next="<%= clients[index + 2].uid %>" data-prev="<%= clients[index].uid %>">
       <div class="client-title">
-        <%= client['project.nom_du_projet'].as_html(nil).html_safe %>
-        <%= client['project.ville'].as_html(nil).html_safe %>
+        <%= client['client.client_link'].as_html(nil).html_safe %>
+        <%= client['client.client_city'].as_html(nil).html_safe %>
       </div>
       <div class="content">
-        <%= client['project.description'].as_html(nil).html_safe %>
+        <%= client['client.client_description'].as_html(nil).html_safe %>
       </div>
     </div>
   <% end %>
   <% last_client = clients[-1] %>
   <div class="client-page fullpage" id="<%= last_client.uid %>" data-prev="<%= clients[-2].uid %>">
     <div class="client-title">
-      <%= last_client['project.nom_du_projet'].as_html(nil).html_safe %>
-      <%= last_client['project.ville'].as_html(nil).html_safe %>
+      <%= last_client['client.client_link'].as_html(nil).html_safe %>
+      <%= last_client['client.client_city'].as_html(nil).html_safe %>
     </div>
     <div class="content">
-      <%= last_client['project.description'].as_html(nil).html_safe %>
+      <%= last_client['client.client_description'].as_html(nil).html_safe %>
     </div>
 </div>
 <div class="hidden" id="clients-list" data-info=<%= get_clients_list %>></div>

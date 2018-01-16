@@ -64,7 +64,7 @@
 // spécificités de la page legal
 .legal-page {
   background-color: $b-brown;
-  height: auto;
+  min-height: 100vh;
   padding-left: 27%;
   width: calc(100vw - 27%);
   @media (max-width: $small-screen) {
@@ -74,7 +74,7 @@
   }
 }
 .legal-content {
-  padding: 14% 14%;
+  padding: 12% 14%;
   column-count: 2;
   text-align: justify;
   @media (max-width: $small-screen) {
