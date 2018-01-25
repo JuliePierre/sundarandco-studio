@@ -44,7 +44,7 @@ function desktopScroller(morePage, newsLetter){
         target.classList.add('front-page');
         target.classList.remove('up');
         window.setTimeout(function() { down(currentSection); }, 400)
-        window.setTimeout(function() { stepBack(target); }, 500)
+        window.setTimeout(function() { stepBack(target); }, 600)
       }
     }
     // SECTION MORE & NL //
@@ -57,7 +57,7 @@ function desktopScroller(morePage, newsLetter){
         morePage.classList.add('front-page');
         morePage.classList.remove('up');
         window.setTimeout(function() { down(newsLetter); }, 400)
-        window.setTimeout(function() { stepBack(morePage); }, 500)
+        window.setTimeout(function() { stepBack(morePage); }, 600)
       }
     }
   });
@@ -88,7 +88,7 @@ function mobileScroller(morePage, newsLetter){
         target.classList.add('front-page');
         target.classList.remove('up');
         window.setTimeout(function() { down(currentSection); }, 400)
-        window.setTimeout(function() { stepBack(target); }, 500)
+        window.setTimeout(function() { stepBack(target); }, 600)
       }
     }
     // SECTION MORE & NL //
@@ -97,7 +97,7 @@ function mobileScroller(morePage, newsLetter){
         morePage.classList.add('front-page');
         morePage.classList.remove('up');
         window.setTimeout(function() { down(newsLetter); }, 400)
-        window.setTimeout(function() { stepBack(morePage); }, 500)
+        window.setTimeout(function() { stepBack(morePage); }, 600)
       }
     }
   }, false);
